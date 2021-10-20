@@ -1,0 +1,77 @@
+.register{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: #44ffee;
+}
+.container form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  /* width: calc(100% / 2 - 20px); */
+  width: 330px;
+  margin-bottom: 10px;
+}
+.user-details .input-box .details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #385D6C;
+}
+
+form .button{
+  height: 45px;
+  margin: 30px 0;
+}
+form .button input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #44ffee 0%, skyblue 50%, #44ffee 99%);
+}
+form .button input:hover{
+  background: linear-gradient( skyblue 0%, #44ffee 50%, skyblue 88%);
+}
