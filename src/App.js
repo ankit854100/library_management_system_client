@@ -8,6 +8,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import axios from 'axios';
 import Footer from './components/Footer';
+import Registration from './components/Registration/Registration';
+// import ItemCard from './components/ItemCard';
+import Pagination from './components/Pagination/Pagination';
+import Members from './components/Members/Members';
 
 // export var data = [];/
 
@@ -16,8 +20,10 @@ function App() {
     <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route path="/add-book" component={AddBook} />
+            {/* <Route path="/add-book" component={AddBook} />
             <Route exact path="/" component={HomePage} />
+            <Route path="/signup" component={Registration} /> */}
+            <Route path="/" component={Members}/>
           </Switch>
         </BrowserRouter>
     </div>
@@ -76,6 +82,11 @@ function HomePage(){
           <span>loading...</span>
         </div>
       }
+      {/* <NavBar/>
+      <Registration/>
+      <Footer/> */}
+      <Pagination/>
+      <Members/>
     </React.Fragment>
   );
 }

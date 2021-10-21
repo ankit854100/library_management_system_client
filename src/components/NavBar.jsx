@@ -9,6 +9,7 @@ function NavBar() {
                 <div className="navBar-links">
                     <Link to="/" ><span>Home</span></Link>
                     <Link to="/add-book"><span>Add Book</span></Link>
+                    <Link to="/signup"><span>Sign Up</span></Link>
                 </div>
             </div>
             <style jsx="true">{`

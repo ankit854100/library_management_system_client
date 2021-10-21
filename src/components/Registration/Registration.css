@@ -23,7 +23,7 @@
   bottom: 0;
   height: 3px;
   width: 30px;
-  background: #44ffee;
+  background: #410165 ;
 }
 .container form .user-details{
   display: flex;
@@ -40,19 +40,20 @@ form .user-details .input-box{
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
+  font-size: 15px;
 }
 .user-details .input-box input{
   height: 40px;
   width: 100%;
   outline: none;
   border-radius: 5px;
-  padding-left: 15px;
+  padding-left: 10px;
   border: 1px solid #ccc;
   font-size: 16px;
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #385D6C;
+  border-color:#8c11d8;
 }
 
 form .button{
@@ -70,8 +71,8 @@ form .button input{
   border-radius: 5px;
   cursor: pointer;
   letter-spacing: 1px;
-  background: linear-gradient(to right, #44ffee 0%, skyblue 50%, #44ffee 99%);
+  background: linear-gradient(to right, #42046bc0 0%, #8c11d8 50%, #410165 99%);
 }
 form .button input:hover{
-  background: linear-gradient( skyblue 0%, #44ffee 50%, skyblue 88%);
+  background: linear-gradient( #8c11d8 0%, #af53ecc0 50%, #8c11d8 88%);
 }

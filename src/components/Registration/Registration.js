@@ -18,7 +18,7 @@ export const Registration = () => {
       return 
     }
     
-    axios.post("http://localhost:5000/", {fname: fname,lname: lname, email: email,number:number,password:password,confirmpassword:confirmpassword})
+    axios.post("http://localhost:5000/signup", {fname: fname,lname: lname, email: email,number:number,password:password,confirmpassword:confirmpassword})
             .then(res => {
                 console.log(res.data);
                 alert('user has been added');
