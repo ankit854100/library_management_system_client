@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios'
 import './registration.css'
+import NavBar from '../NavBar';
 
 export const Registration = () => {
 
@@ -18,7 +19,7 @@ export const Registration = () => {
       return 
     }
     
-    axios.post("http://localhost:5000/member/add", {name: fname + " " + lname, email: email,number:number})
+    axios.post("http://localhost:5000/member/", {name: fname + " " + lname, email: email,number:number})
             .then(res => {
                 console.log(res.data);
                 alert('user has been added');
@@ -36,44 +37,47 @@ export const Registration = () => {
   }
   
   return (
-    <div className="register">
-      <div className="container">
-        <div className="title">
-          Registration
+    <React.Fragment>
+      <NavBar />
+      <div className="register">
+        <div className="container">
+          <div className="title">
+            Registration
+          </div>
+          <form onSubmit={setregister}>
+            <div className="user-details">
+              <div className="input-box">
+                <span className="details">First Name</span>
+                <input type="text" placeholder="enter your first name" value={fname} onChange={(e) => {setfName(e.target.value)}} required/>
+              </div>
+              <div className="input-box">
+                <span className="details">Last Name</span>
+                <input type="text" placeholder="enter your last name" value={lname} onChange={(e) => {setlName(e.target.value)}} required/>
+              </div>
+              <div className="input-box">
+                <span className="details">Email Id.</span>
+                <input type="text" placeholder="enter your email id" value={email} onChange={(e) => {setEmail(e.target.value)}} required/>
+              </div>
+              <div className="input-box">
+                <span className="details">Phone Number</span>
+                <input type="number" placeholder="enter your phone number" value={number} onChange={(e) => {setnumber(e.target.value)}} required/>
+              </div>
+              <div className="input-box">
+                <span className="details">Password</span>
+                <input type="password" placeholder="enter your password" value={password} onChange={(e) => {setpassword(e.target.value)}} required/>
+              </div>
+              <div className="input-box">
+                <span className="details">Confirm Password</span>
+                <input type="password" placeholder="Confirm your Password" value={confirmpassword} onChange={(e) => {setconfirmpassword(e.target.value)}} required/>
+              </div>
+            </div>
+            <div className="button">
+              <input type="submit" value="Register"/>
+            </div>
+          </form>
         </div>
-        <form onSubmit={setregister}>
-          <div className="user-details">
-            <div className="input-box">
-              <span className="details">First Name</span>
-              <input type="text" placeholder="enter your first name" value={fname} onChange={(e) => {setfName(e.target.value)}} required/>
-            </div>
-            <div className="input-box">
-              <span className="details">Last Name</span>
-              <input type="text" placeholder="enter your last name" value={lname} onChange={(e) => {setlName(e.target.value)}} required/>
-            </div>
-            <div className="input-box">
-              <span className="details">Email Id.</span>
-              <input type="text" placeholder="enter your email id" value={email} onChange={(e) => {setEmail(e.target.value)}} required/>
-            </div>
-            <div className="input-box">
-              <span className="details">Phone Number</span>
-              <input type="number" placeholder="enter your phone number" value={number} onChange={(e) => {setnumber(e.target.value)}} required/>
-            </div>
-            <div className="input-box">
-              <span className="details">Password</span>
-              <input type="password" placeholder="enter your password" value={password} onChange={(e) => {setpassword(e.target.value)}} required/>
-            </div>
-            <div className="input-box">
-              <span className="details">Confirm Password</span>
-              <input type="password" placeholder="Confirm your Password" value={confirmpassword} onChange={(e) => {setconfirmpassword(e.target.value)}} required/>
-            </div>
-          </div>
-          <div className="button">
-            <input type="submit" value="Register"/>
-          </div>
-        </form>
-      </div>
-    </div> 
+      </div> 
+    </React.Fragment>
   )
 }
 export default Registration;

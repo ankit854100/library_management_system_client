@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 import './members.css'
 import { Link } from 'react-router-dom'
+import NavBar from '../NavBar'
 
 const Members = () => {
 
@@ -17,7 +18,6 @@ const Members = () => {
     }, [])
 
     function fetchData(number){
-        console.log("function is called", current);
         axios.get(`http://localhost:5000/member?page=${number}&limit=5`)
             .then((res) => {
                 // console.log(res.data);
@@ -55,49 +55,52 @@ const Members = () => {
     }
     
     return (
-        <div className="BookList">
-            <div className="BookList-container">
-                {memberList.length ? 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>S.No.</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Number</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {memberList.map((user,index) => {
-                                return (
-                                
-                                    <tr>
-                                        <td>{index + 1}</td>
-                                        <td>{user.name}</td>
-                                        <td>{user.email}</td>
-                                        <td>{user.number}</td>
-                                        <td>
-                                            <Link className="button"><i class="far fa-eye" style={{color:'#9CC094'}}></i></Link>
-                                            <Link className="button"><i class="fas fa-edit" style={{color: 'blue'}}></i></Link>
-                                            <Link className="button"><i class="fas fa-trash-alt" style={{ color: '#E02401'}}></i></Link>
-                                        </td>
+        <React.Fragment>
+            <NavBar />
+            <div className="BookList">
+                <div className="BookList-container">
+                    {memberList.length ? 
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Number</th>
+                                    {/* <th>Action</th> */}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {memberList.map((user,index) => {
+                                    return (
+                                    
+                                        <tr>
+                                            <td>{index + 1}</td>
+                                            <td style={{minWidth: "10rem"}}>{user.name}</td>
+                                            <td style={{minWidth: "15rem"}}>{user.email}</td>
+                                            <td style={{minWidth: "8rem"}}>{user.number}</td>
+                                            {/* <td>
+                                                <Link className="button"><i class="far fa-eye" style={{color:'#9CC094'}}></i></Link>
+                                                <Link className="button"><i class="fas fa-edit"></i></Link>
+                                                <Link className="button"><i class="fas fa-trash-alt" style={{ color: '#E02401'}}></i></Link>
+                                            </td> */}
 
-                                    </tr>
-                                    )
-                            })}
-                        </tbody>
-                    </table> : 
-                    <h1>Loading...</h1>
-                }   
-                <div className="page-container">
-                    { isPrevious && <button className="btn" onClick={handlePrevious}> <i class="fas fa-chevron-left"></i> {"  " + previous + "  "} </button> } 
-                    <span className="span-btn">{"  " + current + "  " }</span>
-                    { isNext && <button className="btn" onClick={handleNext}> {"  " + next + "  "} <i class="fas fa-chevron-right"></i> </button> }
+                                        </tr>
+                                        )
+                                })}
+                            </tbody>
+                        </table> : 
+                        <h1>Loading...</h1>
+                    }   
+                    <div className="page-container">
+                        { isPrevious && <button className="btn btn-click" onClick={handlePrevious}> <i class="fas fa-chevron-left"></i> {"  " + previous + "  "} </button> } 
+                        <button className="btn btn-input">{"  " + current + "  " }</button>
+                        { isNext && <button className="btn btn-click" onClick={handleNext}> {"  " + next + "  "} <i class="fas fa-chevron-right"></i> </button> }
+                    </div>
                 </div>
+                
             </div>
-            
-        </div>
+        </React.Fragment>
     )
 }
 
