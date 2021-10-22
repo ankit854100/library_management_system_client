@@ -1,15 +1,21 @@
 .BookList{
+    align-items: center;
     margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
-    width: 80%;
+    width: 60%;
 }
 .BookList h2{
     margin-bottom: 1rem;
+}
+.BookList .BookList-container h1{
+    margin-left: 212px;    
 }
 
 .BookList-container{
     margin-bottom: 2rem;  
     max-height: 22rem;
+    margin-left: 70px;
 }
 
 .BookList thead th{
@@ -32,7 +38,7 @@
     cursor: pointer;
 }
 
-.BookList i:hover{
+.BookList .button i:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     color:blue;
 }
@@ -50,6 +56,22 @@
     margin-right: 12px;
     color: black;
 }
-.fas .fa-edit{
-    color: rebeccapurple;
+/* table > .fas .fa-edit{
+    color: rgb(28, 23, 32);
+} */
+.page-container{
+    margin-top: 10px;
+    width:83%;
+    display: flex;
+    justify-content: center;
+}
+.page-container .btn{
+    background-color: blue;
+    color: white;
+}
+.page-container .span-btn{
+    background-color: blue;
+    color: white;
+    width: 20px;
+    text-align: center;
 }

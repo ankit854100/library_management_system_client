@@ -62,9 +62,9 @@ const Members = () => {
                         <thead>
                             <tr>
                                 <th>S.No.</th>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Price</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Number</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -78,9 +78,9 @@ const Members = () => {
                                         <td>{user.email}</td>
                                         <td>{user.number}</td>
                                         <td>
-                                            <Link className="button"><i class="far fa-eye" style={{color:'slategray'}}></i></Link>
+                                            <Link className="button"><i class="far fa-eye" style={{color:'#9CC094'}}></i></Link>
                                             <Link className="button"><i class="fas fa-edit" style={{color: 'blue'}}></i></Link>
-                                            <Link className="button"><i class="fas fa-trash-alt" style={{ color: '#ff726f'}}></i></Link>
+                                            <Link className="button"><i class="fas fa-trash-alt" style={{ color: '#E02401'}}></i></Link>
                                         </td>
 
                                     </tr>
@@ -90,10 +90,10 @@ const Members = () => {
                     </table> : 
                     <h1>Loading...</h1>
                 }   
-                <div>
-                    { isPrevious && <button onClick={handlePrevious}> <i class="fas fa-chevron-left"></i> {"  " + previous + "  "} </button> } 
-                    <span>{"  " + current + "  " }</span>
-                    { isNext && <button onClick={handleNext}> {"  " + next + "  "} <i class="fas fa-chevron-right"></i> </button> }
+                <div className="page-container">
+                    { isPrevious && <button className="btn" onClick={handlePrevious}> <i class="fas fa-chevron-left"></i> {"  " + previous + "  "} </button> } 
+                    <span className="span-btn">{"  " + current + "  " }</span>
+                    { isNext && <button className="btn" onClick={handleNext}> {"  " + next + "  "} <i class="fas fa-chevron-right"></i> </button> }
                 </div>
             </div>
             
