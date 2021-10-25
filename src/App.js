@@ -8,10 +8,17 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import axios from 'axios';
 import Footer from './components/Footer';
+
 import HomeTable from './components/HomeTableContainer';
 import Home from './components/Home';
 import Registration from './components/registration/Registration';
 import Members from './components/members/Members'; 
+
+import Registration from './components/Registration/Registration';
+// import ItemCard from './components/ItemCard';
+import Pagination from './components/Pagination/Pagination';
+import Members from './components/Members/Members';
+
 
 // export const allBooks = [
 //   {
@@ -225,6 +232,7 @@ function App() {
     <div className="App">
         <BrowserRouter>
           <Switch>
+
             <Route path="/add-book" component={AddBook} />
             <Route path="/signup" component={Registration} />
             <Route path="/members" component={Members} />
@@ -233,6 +241,12 @@ function App() {
               {/* <Members /> */}
               {/* <Registration /> */}
             </Route>
+
+            {/* <Route path="/add-book" component={AddBook} />
+            <Route exact path="/" component={HomePage} />
+            <Route path="/signup" component={Registration} /> */}
+            <Route path="/" component={Members}/>
+
           </Switch>
         </BrowserRouter>
     </div>
@@ -284,6 +298,15 @@ export function HomePage(){
             <ItemContainer data={loadedData} />
           }
         </div>
+
+
+      }
+      {/* <NavBar/>
+      <Registration/>
+      <Footer/> */}
+      <Pagination/>
+      <Members/>
+
     </React.Fragment>
   );
 }
