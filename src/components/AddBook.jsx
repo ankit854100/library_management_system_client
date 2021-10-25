@@ -9,10 +9,10 @@ function AddBook() {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-    const [images, setImages] = useState();
+    const [categories, setCategories] = useState();
 
     const handleSubmit = () => {
-        axios.post("http://localhost:5000/addBook", {title: title, description: description, image: images})
+        axios.post("http://localhost:5000/book/addBook", {title: title, price: price, description: description, category: categories})
             .then(res => {
                 // console.log(res.data);
                 alert('item has been added');
@@ -35,7 +35,8 @@ function AddBook() {
                         <div className="addBook-inputContainer">
                             <input type="text" placeholder="Enter title" value={title} onChange={(e) => setTitle(e.target.value)}/>
                             <input type="text" placeholder="Enter price" value={price} onChange={(e) => setPrice(e.target.value)}/>
-                            <FileBase type="file" className="addProduct-formItem-right-textInput" multiple={false} onDone={({ base64 }) => setImages(base64)} />
+                            <input type="text" placeholder="Enter categories" value={categories} onChange={(e) => setCategories(e.target.value)}/>
+                            {/* <FileBase type="file" className="addProduct-formItem-right-textInput" multiple={false} onDone={({ base64 }) => setImages(base64)} /> */}
                         </div>
                         <textarea cols="30" rows="4" placeholder="Enter book description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                         <button onClick={handleSubmit}>Submit</button>

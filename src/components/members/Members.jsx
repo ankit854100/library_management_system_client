@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 import './members.css'
-import { Link } from 'react-router-dom'
 import NavBar from '../NavBar'
 
 const Members = () => {
@@ -53,6 +52,19 @@ const Members = () => {
         const currentValue = current;
         fetchData(currentValue + 1);
     }
+
+    const handleDelete = (email) => {
+        axios.delete(`http://localhost:5000/member/${email}`)
+            .then((res) => {
+                // console.log(res.data);
+                setMemberList((prev) => {
+                    return prev.filter((item) => item.email !== email);
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
     
     return (
         <React.Fragment>
@@ -67,7 +79,7 @@ const Members = () => {
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Number</th>
-                                    {/* <th>Action</th> */}
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,11 +91,11 @@ const Members = () => {
                                             <td style={{minWidth: "10rem"}}>{user.name}</td>
                                             <td style={{minWidth: "15rem"}}>{user.email}</td>
                                             <td style={{minWidth: "8rem"}}>{user.number}</td>
-                                            {/* <td>
-                                                <Link className="button"><i class="far fa-eye" style={{color:'#9CC094'}}></i></Link>
-                                                <Link className="button"><i class="fas fa-edit"></i></Link>
-                                                <Link className="button"><i class="fas fa-trash-alt" style={{ color: '#E02401'}}></i></Link>
-                                            </td> */}
+                                            <td>
+                                                {/* <Link className="button"><i class="far fa-eye" style={{color:'#9CC094'}}></i></Link> */}
+                                                {/* <Link className="button"><i class="fas fa-edit"></i></Link> */}
+                                                <span className="button" onClick={() => {handleDelete(user.email)}}><i class="fas fa-trash-alt" style={{ color: '#E02401'}}></i></span>
+                                            </td>
 
                                         </tr>
                                         )

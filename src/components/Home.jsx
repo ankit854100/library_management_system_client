@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { HomePage } from '../App';
 import NavBar from './NavBar';
 import RightTable from './RightTable';
 import TreeUI from './TreeUI'
@@ -10,6 +11,7 @@ function Home(props) {
     return (
         <React.Fragment>
             <NavBar />
+            {/* <HomePage /> */}
             <div className="home">
                 <div className="home-left">
                     <TreeUI data={props.data} setRightSelected={setRightSelected}/>
@@ -23,6 +25,7 @@ function Home(props) {
                     // background-color: #fff;
                     min-height: 100%;
                     display: flex;
+                    margin-bottom: 2rem;
                 }
 
                 .home-left{
