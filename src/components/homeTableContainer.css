@@ -1,0 +1,26 @@
+.homeTable{
+    color: #610094;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    margin-bottom: 1rem;
+}
+
+.homeTable-top{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.homeTable p{
+    margin: 0;
+}
+
+.homeTable i{
+    cursor: pointer;
+}
+
+.homeTable-subCatrgory{
+    margin-left: 0.5rem;
+}

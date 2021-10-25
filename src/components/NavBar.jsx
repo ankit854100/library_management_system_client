@@ -8,8 +8,14 @@ function NavBar() {
                 <div className="navBar-brand"><Link to="/"><span>Book-Store</span></Link></div>
                 <div className="navBar-links">
                     <Link to="/" ><span>Home</span></Link>
+
+                    <Link to="/members" ><span>Members</span></Link>
+                    <Link to="/signup" ><span>Registration</span></Link>
+                    <Link to="/add-book"><span>Add-Book</span></Link>
+
                     <Link to="/add-book"><span>Add Book</span></Link>
                     <Link to="/signup"><span>Sign Up</span></Link>
+
                 </div>
             </div>
             <style jsx="true">{`
