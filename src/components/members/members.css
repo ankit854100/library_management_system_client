@@ -1,36 +1,29 @@
 .BookList{
-    align-items: center;
     margin-left: auto;
-    margin-right: auto;
     margin-top: 50px;
-    width: 60%;
+    width: 80%;
 }
 .BookList h2{
     margin-bottom: 1rem;
-}
-.BookList .BookList-container h1{
-    margin-left: 212px;    
 }
 
 .BookList-container{
     margin-bottom: 2rem;  
     max-height: 22rem;
-    margin-left: 70px;
 }
 
 .BookList thead th{
-    background-color: #6a08ba;
+    background-color: #5503c0;
     color: #fff;
-    padding: 0.5rem;
 }
 
-.BookList  td{
+.BookList th, td{
     padding: 0.5rem 1rem;
     background-color: rgb(233, 225, 238);
     
 }
 
-.BookList > tbody > tr{
+.BookList tbody tr{
     border-bottom: 2px solid #E1E1E1;
 }
 
@@ -39,9 +32,9 @@
     cursor: pointer;
 }
 
-.BookList .button i:hover{
+.BookList i:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    color:#6a08ba;
+    color:blue;
 }
 
 .last{
@@ -57,40 +50,6 @@
     margin-right: 12px;
     color: black;
 }
-/* table > .fas .fa-edit{
-    color: rgb(28, 23, 32);
-} */
-.page-container{
-    margin-top: 10px;
-    width:83%;
-    display: flex;
-    justify-content: center;
-}
-
-.page-container i{
-    color: #fff;
-}
-
-.page-container .btn{
-    background-color: #6a08ba;
-    color: white;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-    width: 4rem;
-    height: 2rem;
-    border-radius: 0.25rem;
-    border: none;
-}
-
-.page-container .btn-click{
-    cursor: pointer;
-}
-
-.page-container .btn-click:hover{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.page-container .btn-input{
-    background-color: transparent;
-    border: 2px solid #6a08ba;
+.fas .fa-edit{
+    color: rebeccapurple;
 }
