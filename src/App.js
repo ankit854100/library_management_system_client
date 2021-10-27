@@ -216,7 +216,7 @@ function App() {
   useEffect(() => {
     axios.get("http://localhost:5000/book")
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setAllBooks(res.data.map(item => item));
       })
   }, [])

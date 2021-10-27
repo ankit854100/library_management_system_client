@@ -96,7 +96,7 @@ function RightTable(props) {
                 }
 
                 .rightTable-title{
-                    min-width: 20rem;
+                    min-width: 30rem;
                 }
 
                 .alternate-white{
